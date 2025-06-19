@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details- UiTM e-Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a4480;
+            --secondary: #4e95ed;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .main-content {
+            padding-top: 80px;
+            padding-bottom: 60px;
+            flex: 1;
+        }
+        
+        .profile-detail-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .profile-detail-img:hover {
+            transform: scale(1.03);
+            border-color: var(--secondary);
+        }
+        
+        .detail-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .detail-section:hover {
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                background: white;
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                margin-top: 10px;
+            }
+            
+            .profile-detail-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">
+                <i class="fas fa-user-graduate me-2"></i>UiTM e-Profile
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="students.html">
+                            <i class="fas fa-users me-1"></i> Students
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="index.html" id="logoutLink">
+                            <i class="fas fa-sign-out-alt me-1"></i> Log Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Student Profile</h2>
+            <a href="students.html" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-1"></i> Back to Students List
+            </a>
+        </div>
+        
+        <div class="detail-section">
+    <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="student 5.jpg" id="detail-photo" class="profile-detail-img mb-3" alt="Student Photo">
+                    <h4 id="detail-name">Amiza Binti Cute</h4>
+                    <p class="text-muted" id="detail-id">ID: 2024112233</p>
+                    <span class="badge bg-success" id="detail-status">Active</span>
+                </div>
+                
+                <div class="col-md-9">
+                    <h4 class="mb-4">Personal Information</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-muted">Student Number</label>
+                            <p id="detail-studentnumber">2024112233</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-muted">Programe</label>
+                            <p id="detail-major">System Management</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-muted">Faculty</label>
+                            <p id="detail-faculty">Faculty of Information Management</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-muted">Semester</label>
+                            <p id="detail-semester">4</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-muted">Email</label>
+                            <p id="detail-email">NurAmiza@student.uitm.edu.my</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-muted">Phone Number</label>
+                            <p id="detail-phone">+60 12 345 6789</p>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label text-muted">Address</label>
+                            <p id="detail-address">No 12, Jalan Teknik, 40450 Shah Alam, Selangor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>UiTM Student e-Profile</h5>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="mb-2">
+                        <a href="https://www.facebook.com/uitmrasmi/?locale=ms_MY" target="_blank" class="text-white me-3">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/uitm.official/?hl=en" target="_blank" class="text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p>&copy; 2025 Universiti Teknologi MARA.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (!isLoggedIn || isLoggedIn !== 'true') {
+      window.location.href = 'index.html';
+    }
+
+    document.getElementById('logoutLink').addEventListener('click', function () {
+      localStorage.removeItem('isLoggedIn');
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const studentId = urlParams.get('id') || 1;
+
+    const students = {
+      1: {
+        name: "Nur Amiza",
+        id: "2024112233",
+        photo: "student 1.jpg",
+        faculty: "Faculty of Information Science",
+        major: "System Management",
+        semester: "4",
+        email: "NurAmiza@student.uitm.edu.my",
+        phone: "+60 12 345 6789",
+        address: "No 12, Jalan Teknik, 40450 Shah Alam, Selangor",
+        status: "Active"
+      },
+      2: {
+        name: "Adriana G",
+        id: "2024445566",
+        photo: "student 2.png",
+        faculty: "Faculty of Information Management",
+        major: "Content Management",
+        semester: "4",
+        email: "AdrianaG@student.uitm.edu.my",
+        phone: "+60 11 2233 4455",
+        address: "No 5, Jalan IT, 76500 Selayang, Selangor",
+        status: "Active"
+      },
+      3: {
+        name: "Wahida Zai",
+        id: "2024778899",
+        photo: "student 3.png",
+        faculty: "Faculty of Information Management",
+        major: "Content Management",
+        semester: "4",
+        email: "WahidaZai@student.uitm.edu.my",
+        phone: "+60 13 9988776",
+        address: "No 22, Jalan Konstruksi, 78200 Alor Gajah, Melaka",
+        status: "Active"
+      },
+      4: {
+        name: "Atiqah Ish",
+        id: "2024123456",
+        photo: "student 4.png",
+        faculty: "Faculty of Information Science",
+        major: "Record Management",
+        semester: "4",
+        email: "AtiqahIsh@student.uitm.edu.my",
+        phone: "+60 14 5678901",
+        address: "No 8, Jalan Ekonomi, 13800 Segamat, Johor",
+        status: "Active"
+      },
+      5: {
+        name: "Zulfiarudin Zuma",
+        id: "2024009988",
+        photo: "student 5.jpg",
+        faculty: "Faculty of Information Science",
+        major: "System Management",
+        semester: "6",
+        email: "Zulfiarudin@student.uitm.edu.my",
+        phone: "+60 16 1122334",
+        address: "No 15, Jalan Bisnis, 67400 Duyong, Melaka",
+        status: "Active"
+      }
+    };
+
+    const student = students[studentId];
+
+    if (student) {
+      document.getElementById('detail-photo').src = student.photo;
+      document.getElementById('detail-name').textContent = student.name;
+      document.getElementById('detail-id').textContent = "ID: " + student.id;
+      document.getElementById('detail-studentnumber').textContent = student.id;
+      document.getElementById('detail-major').textContent = student.major;
+      document.getElementById('detail-faculty').textContent = student.faculty;
+      document.getElementById('detail-semester').textContent = student.semester;
+      document.getElementById('detail-email').textContent = student.email;
+      document.getElementById('detail-phone').textContent = student.phone;
+      document.getElementById('detail-address').textContent = student.address;
+      document.getElementById('detail-status').textContent = student.status;
+    } else {
+      document.getElementById('detail-name').textContent = "Student not found";
+    }
+  });
+</script>
