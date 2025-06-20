@@ -118,9 +118,9 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            // Validasi sederhana
+            // Simple Validation
             if (email === 'student@uitm.edu.my' && password === 'password123') {
-                // Simpan status login di localStorage
+                // Save status login at localStorage
                 localStorage.setItem('isLoggedIn', 'true');
                 // Redirect to dashboard
                 window.location.href = 'dashboard.html';
